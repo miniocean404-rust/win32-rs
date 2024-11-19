@@ -1,8 +1,8 @@
 use std::error::Error;
 
-use scan::app::index::run;
+use scan::zombie::start::exec;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    unsafe { run() }?;
+    unsafe { exec() }?;
     Ok(())
 }

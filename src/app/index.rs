@@ -1,7 +1,6 @@
 #![allow(clippy::missing_safety_doc)]
 
 use crate::windows::hwnd::get_hwnd_for_title;
-use crate::windows::ui::dialog;
 use windows::core::w;
 use windows::Win32::Foundation::GetLastError;
 use windows::Win32::System::LibraryLoader::GetModuleHandleW;
@@ -15,12 +14,10 @@ pub unsafe fn run() -> anyhow::Result<()> {
         Ok(handle) => {
             let module_base_addr = handle.0 as u32;
             println!("模块基址: {:#X}", module_base_addr);
-            dialog(w!("模块基址"), w!("找到了"));
         }
         Err(_) => {
             // 根据 WIN32_ERROR 的值，在VS的 工具 -> 错误查找 ，输入你的错误号查找对应的原因。
             let error = GetLastError();
-            dialog(w!("模块基址"), w!("error"));
             let _ = dbg!(error);
         }
     }
