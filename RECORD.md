@@ -1,3 +1,9 @@
+# 内存扫描
+## 文章
+1. https://www.cnblogs.com/Timesi/p/17328291.html
+2. 植物大战僵尸 c++ 修改 dll 注入：https://www.bilibili.com/opus/978917454469136406
+3. CE 指针偏移查找：https://www.cnblogs.com/LyShark/p/16490201.html
+
 # 坑
 
 ## 中英文

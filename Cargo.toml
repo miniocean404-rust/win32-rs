@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 resolver = "2"
 
-# [lib]
-# crate-type = ["cdylib"]
+[lib]
+crate-type = ["lib", "cdylib"]
 
 [dependencies]
 [target.'cfg(target_os = "windows")'.dependencies]
