@@ -8,8 +8,7 @@ use windows::Win32::System::LibraryLoader::GetModuleHandleW;
 
 pub unsafe fn run() -> anyhow::Result<()> {
     let _ = get_hwnd_for_title(w!("微信"))?;
-    // GetModuleHandle 获取一个特定的应用程序或动态链接库的模块句柄，且这个模块必须已经被加载到调用者(exe 注入 这个应用程序的 dll)的进程空间中。
-    // 例如：user32.dll
+
     let handle = GetModuleHandleW(w!("WeChat.exe"));
 
     match handle {

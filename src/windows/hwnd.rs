@@ -1,7 +1,7 @@
-use windows::core::{w, PCWSTR};
+use windows::core::PCWSTR;
 use windows::Win32::Foundation::HWND;
+use windows::Win32::UI::WindowsAndMessaging::FindWindowW;
 use windows::Win32::UI::WindowsAndMessaging::{GetForegroundWindow, GetWindowTextW};
-use windows::Win32::UI::WindowsAndMessaging::{FindWindowW};
 
 pub unsafe fn get_hwnd_for_title(title: PCWSTR) -> windows::core::Result<HWND> {
     FindWindowW(None, title)
@@ -23,7 +23,6 @@ pub unsafe fn get_window_title(window: HWND) -> String {
     // let title = OsString::from_wide(&title[..]);
     // println!("子窗口标题: {}", title.to_str().unwrap_or(""));
 }
-
 
 // 通过句柄获取进程 ID
 // GetWindowThreadProcessId()
