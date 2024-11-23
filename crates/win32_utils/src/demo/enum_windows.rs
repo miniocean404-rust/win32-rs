@@ -1,8 +1,8 @@
 use windows::Win32::Foundation::{BOOL, HWND, LPARAM};
 use windows::Win32::UI::WindowsAndMessaging::WS_VISIBLE;
-use crate::window::{get_window_title, get_window_title_classname};
-use crate::ui::get_window_info;
+
 use crate::unknown::get_window_program_path;
+use crate::window::info::{get_window_info, get_window_title, get_window_title_classname};
 
 // HWND 是一种数据类型，表示窗口句柄（Handle to a Window）。
 // EnumWindows(Some(enum_windows), LPARAM(0)).unwrap(); // EnumWindows 是一个 Windows API 函数，用于枚举所有顶级窗口。

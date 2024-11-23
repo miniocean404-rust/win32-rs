@@ -5,7 +5,7 @@ edition.workspace = true
 repository.workspace = true
 
 [lib]
-name="game_dll"
+name = "game_dll"
 crate-type = ["lib", "cdylib"]
 
 [[bin]]

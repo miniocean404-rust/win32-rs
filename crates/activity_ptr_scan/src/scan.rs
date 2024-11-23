@@ -3,7 +3,7 @@
 use windows::core::w;
 use windows::Win32::Foundation::GetLastError;
 use windows::Win32::System::LibraryLoader::GetModuleHandleW;
-use win32_utils::window::get_hwnd_for_title;
+use win32_utils::window::hwnd::get_hwnd_for_title;
 
 pub unsafe fn run() -> anyhow::Result<()> {
     let _ = get_hwnd_for_title(w!("微信"))?;

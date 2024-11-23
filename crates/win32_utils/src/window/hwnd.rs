@@ -1,8 +1,6 @@
 use windows::core::PCWSTR;
-use windows::Win32::Foundation::{CloseHandle, HWND};
-use windows::Win32::System::ProcessStatus::GetModuleFileNameExW;
-use windows::Win32::System::Threading::{OpenProcess, PROCESS_QUERY_INFORMATION, PROCESS_VM_READ};
-use windows::Win32::UI::WindowsAndMessaging::{FindWindowW, GetAncestor, GetWindowTextLengthW, GetWindowThreadProcessId, GA_ROOT};
+use windows::Win32::Foundation::{HWND};
+use windows::Win32::UI::WindowsAndMessaging::{FindWindowW, GetAncestor,  GA_ROOT};
 use windows::Win32::UI::WindowsAndMessaging::GetForegroundWindow;
 
 // 获取根窗口句柄

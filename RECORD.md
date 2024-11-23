@@ -1,10 +1,15 @@
 # 内存扫描
 
+## 坑
+
+1. 64 位注入 64 位应用程序会生效，32 位同理
+
 ## 文章
 
 1. https://www.cnblogs.com/Timesi/p/17328291.html
 2. 植物大战僵尸 c++ 修改 dll 注入：https://www.bilibili.com/opus/978917454469136406
 3. CE 指针偏移查找：https://www.cnblogs.com/LyShark/p/16490201.html
+4. Rust 中的进程注入参考（是人家想别人帮助的文章）: https://users.rust-lang.org/t/process-injection-in-rust-help/115314
 
 # 坑
 
