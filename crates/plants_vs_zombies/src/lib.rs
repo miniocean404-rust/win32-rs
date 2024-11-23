@@ -12,7 +12,7 @@ use windows::Win32::System::SystemServices::DLL_PROCESS_ATTACH;
 extern "system" fn DllMain(_dll_module: HINSTANCE, call_reason: u32, _reserved: *mut ()) -> bool {
     if call_reason == DLL_PROCESS_ATTACH {
         std::thread::spawn(move || {
-            pub const BASE_ADDRESS: u32 = 0x006a9ec0;
+            // pub const BASE_ADDRESS: u32 = 0x006a9ec0;
             unsafe { dialog(w!("halo"), w!("123")) };
         });
     }
