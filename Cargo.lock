@@ -3,10 +3,28 @@
 version = 3
 
 [[package]]
+name = "activity_ptr_scan"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "win32_utils",
+ "windows",
+]
+
+[[package]]
 name = "anyhow"
 version = "1.0.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4c95c10ba0b00a02636238b814946408b1322d5ac4760326e6fb8ec956d85775"
+
+[[package]]
+name = "plants_vs_zombies"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "win32_utils",
+ "windows",
+]
 
 [[package]]
 name = "proc-macro2"
@@ -27,14 +45,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "scan"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "windows",
-]
-
-[[package]]
 name = "syn"
 version = "2.0.87"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -50,6 +60,14 @@ name = "unicode-ident"
 version = "1.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe"
+
+[[package]]
+name = "win32_utils"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "windows",
+]
 
 [[package]]
 name = "windows"

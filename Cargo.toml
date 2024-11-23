@@ -1,27 +1,40 @@
-[package]
-name = "scan"
+[workspace]
+resolver = "2"
+# 设置默认执行的 workspace
+#default-members = ["crates/image-compress"]
+members = [
+    "crates/*",
+]
+exclude = []
+
+[workspace.package]
 version = "0.1.0"
 edition = "2021"
-resolver = "2"
+repository = "https://github.com/miniocean404-rust/image-compress"
 
-[lib]
-crate-type = ["lib", "cdylib"]
-
-[dependencies]
-[target.'cfg(target_os = "windows")'.dependencies]
-anyhow = "1.0.87"
-windows = { version = "0.58.0", features = [
-    "Win32_System_LibraryLoader",
-    "Win32_System_SystemServices",
-    "Win32_UI_WindowsAndMessaging",
-    "Win32_Foundation",
-    "Win32_System_Threading",
-    "Win32_System_Memory",
-    "Win32_System_Diagnostics_Debug",
-] }
+[profile.dev]
+opt-level = 0
+codegen-units = 16 # debug build will cause runtime panic if codegen-unints is default
+debug = true
+incremental = true
 
 [profile.release]
+debug = false
+# 控制 LLVM 链接时间优化,可以使用整个程序分析来生成更好的优化代码，但代价是链接时间更长，例如，这可以删除死代码
 lto = true
-strip = true
-panic = "abort"
+# 控制一个包将被分割成多少个"代码生成单元"。更多的代码生成单元允许并行处理更多的包，可能会减少编译时间，但可能会产生较慢的代码
 codegen-units = 1
+# 决定 Rust 对程序使用哪种程度的优化，0-3 范围
+opt-level = 3
+# 在 Linux 和 macOS 上，符号信息默认包含在编译.elf文件中。此信息对于正确执行二进制文件不是必需的。手动删除：strip target/release/min-sized-rust
+# 自动从二进制文件中去除符号（调试信息）优化打包大小
+strip = true
+# 默认情况下，当 Rust 代码遇到必须调用的情况时panic!()，它会展开堆栈并生成有用的回溯。但是，展开代码确实需要额外的二进制大小。rustc可以指示立即中止而不是展开，这样就不需要额外的展开代码了。
+panic = "abort"
+# 是否开启断言调试
+debug-assertions = false
+
+[workspace.dependencies]
+win32_utils = { path = "./crates/win32_utils" }
+anyhow = "1.0.87"
+windows = { version = "0.58.0" }
