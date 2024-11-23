@@ -5,7 +5,12 @@ edition.workspace = true
 repository.workspace = true
 
 [lib]
+name="game_dll"
 crate-type = ["lib", "cdylib"]
+
+[[bin]]
+name = "game_inject_dll"
+path = "src/main.rs"
 
 [dependencies]
 win32_utils.workspace = true
