@@ -5,6 +5,7 @@ mod demo;
 mod unknown;
 
 pub mod module;
+pub mod pointer;
 pub mod process;
 pub mod string;
 pub mod ui;
