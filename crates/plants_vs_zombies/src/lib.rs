@@ -1,7 +1,7 @@
 pub mod constant;
 pub mod utils;
 
-use constant::BASE_ADDRESS;
+use constant::{BASE_ADDRESS, SUNSHINE_OFFSET_ONE, SUNSHINE_OFFSET_TWO};
 use utils::{build_ptr, write_memory};
 use win32_utils::string;
 use win32_utils::ui::dialog;
@@ -26,8 +26,8 @@ extern "system" fn DllMain(_dll_module: HINSTANCE, call_reason: u32, _reserved: 
 
 unsafe fn change_sunshine_num() -> anyhow::Result<()> {
     let base_address_ptr = BASE_ADDRESS as *const usize;
-    let sunshine_one_offset = build_ptr(*base_address_ptr, 0x768);
-    let sunshine_two_offset = build_ptr(*sunshine_one_offset, 0x5560);
+    let sunshine_one_offset = build_ptr(*base_address_ptr, SUNSHINE_OFFSET_ONE);
+    let sunshine_two_offset = build_ptr(*sunshine_one_offset, SUNSHINE_OFFSET_TWO);
 
     write_memory(sunshine_two_offset, 999);
 
