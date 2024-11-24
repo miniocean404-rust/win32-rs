@@ -6,5 +6,6 @@ mod unknown;
 
 pub mod module;
 pub mod process;
+pub mod string;
 pub mod ui;
 pub mod window;

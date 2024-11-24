@@ -1,1 +1,1 @@
-pub const BASE_ADDRESS: u32 = 0x006a9ec0;
+pub const BASE_ADDRESS: usize = 0x006a9ec0;
