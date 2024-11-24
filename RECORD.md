@@ -4,6 +4,11 @@
 
 1. dll 注入 64 位则注入 64 位应用程序会生效，32 位同理
 
+## dll 注入工具
+
+1. systeminformer: https://github.com/winsiderss/systeminformer
+2. ProcessHacker: 这个是 systeminformer 的旧版本，有汉化版，升级版暂时无完全汉化版本
+
 ## 文章
 
 1. 设计游戏外挂\_blibli: https://github.com/miniocean404-rust/ac-esp
