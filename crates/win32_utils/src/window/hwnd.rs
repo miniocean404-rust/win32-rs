@@ -1,7 +1,7 @@
 use windows::core::PCWSTR;
-use windows::Win32::Foundation::{HWND};
-use windows::Win32::UI::WindowsAndMessaging::{FindWindowW, GetAncestor,  GA_ROOT};
+use windows::Win32::Foundation::HWND;
 use windows::Win32::UI::WindowsAndMessaging::GetForegroundWindow;
+use windows::Win32::UI::WindowsAndMessaging::{FindWindowW, GetAncestor, GA_ROOT};
 
 // 获取根窗口句柄
 #[allow(dead_code)]

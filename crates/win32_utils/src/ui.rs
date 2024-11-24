@@ -1,6 +1,3 @@
-#![allow(clippy::missing_safety_doc)]
-#![allow(dead_code)]
-
 use windows::core::PCWSTR;
 use windows::Win32::UI::WindowsAndMessaging::{MessageBoxW, MB_OK};
 

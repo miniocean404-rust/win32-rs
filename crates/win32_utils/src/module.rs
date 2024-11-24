@@ -1,6 +1,3 @@
-#![allow(clippy::missing_safety_doc)]
-#![allow(dead_code)]
-
 use windows::{
     core::PCWSTR,
     Win32::{Foundation::HMODULE, System::LibraryLoader::GetModuleHandleW},
